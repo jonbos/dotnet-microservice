@@ -27,7 +27,7 @@ namespace HelloDotnet5
         public async Task<Forecast> GetCurrentWeatherAsync(string city)
         {
             var forecast = await httpClient.GetFromJsonAsync<Forecast>(
-                $"https://{settings.OpenWeatherHost}/data/2.5/forecast?q={city}&appid={settings.ApiKey}&units=imperial");
+                $"https://{settings.OpenWeatherHost}/data/2.5/weather?q={city}&appid={settings.ApiKey}&units=metric");
             return forecast;
         }
     }
